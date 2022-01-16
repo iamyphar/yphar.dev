@@ -1,0 +1,23 @@
+{% extends 'layout-default.html' %}
+
+{% macro galleryItem(legend='Test légende') %}
+<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+    <figure class="gallery-item" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">
+        <a href="{% static 'img/fire.jpg' %}" itemprop="contentUrl" data-size="800x575">
+            <img src="{% static 'img/fire.jpg' %}" width="800" height="575" alt="" itemprop="image">
+        </a>
+        <figcaption class="text-center mt-1" itemprop="caption description">{{ legend }}</figcaption>
+    </figure>
+</div>
+{% endmacro %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="my-gallery row mb-n4" itemscope itemtype="http://schema.org/ImageGallery">
+            {{ galleryItem('Test légende 1') }}
+            {{ galleryItem('Test légende 2') }}
+            {{ galleryItem('Test légende 3') }}
+        </div>
+    </div>
+    {% include 'photoswipe-structure.html' %}
+{% endblock %}

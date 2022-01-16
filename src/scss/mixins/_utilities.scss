@@ -1,0 +1,15 @@
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+// Hardware
+// Enable hardware acceleration for some animation, keeping everything fast and flicker-free.
+
+@mixin hardware($backface: true, $perspective: 1000) {
+  @if $backface {
+    backface-visibility: hidden;
+  }
+  perspective: $perspective;
+}

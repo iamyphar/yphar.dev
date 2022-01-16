@@ -1,0 +1,50 @@
+
+
+@mixin fontawesome-after($content,  $font-size:"", $font-weight:"") {
+  &:after {
+    vertical-align: middle;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Pro";
+    content:icon($content);
+    margin-left:$fontawesome-icon-spacer;
+    @if $font-weight != "" {
+      font-weight:$font-weight;
+    } @else {
+      font-weight:$fontawesome-icon-weight-base;
+    }
+    @if $font-size != "" {
+      font-size:$font-size;
+    } @else {
+      font-size:$fontawesome-icon-size-base;
+    }
+  }
+}
+
+@mixin fontawesome-before($content,  $font-size:"", $font-weight:"") {
+  &:before {
+    vertical-align: middle;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Pro";
+    content:icon($content);
+    margin-right:$fontawesome-icon-spacer;
+    @if $font-weight != "" {
+      font-weight:$font-weight;
+    } @else {
+      font-weight:$fontawesome-icon-weight-base;
+    }
+    @if $font-size != "" {
+      font-size:$font-size;
+    } @else {
+      font-size:$fontawesome-icon-size-base;
+    }
+  }
+}
+

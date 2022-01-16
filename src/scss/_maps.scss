@@ -1,0 +1,94 @@
+// Used to generate custom utilities
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+$colors: map-merge($colors, $custom-colors);
+
+
+//$all-colors: map-merge-multiple($theme-colors, $grays, $blues, $indigos, $purples, $pinks, $reds, $oranges, $yellows, $greens, $teals, $cyans);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "color": map-merge(
+      map-get($utilities, "color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "color"), "values"),
+          (
+            $theme-colors
+          ),
+        ),
+      ),
+    ),
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "background-color": map-merge(
+      map-get($utilities, "background-color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "background-color"), "values"),
+          (
+            $theme-colors
+          ),
+        ),
+      ),
+    ),
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "text-decoration-hover": (
+      property: text-decoration,
+      class: text-decoration,
+      state: hover focus,
+      values: none underline line-through,
+    )
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "text-color-hover": (
+      property: color,
+      class: text,
+      state: hover focus,
+      values: map-merge(
+        map-get(map-get($utilities, "color"), "values"),
+        (
+          $theme-colors
+        )
+      )
+    )
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "gap-x": (
+      responsive: true,
+      property: grid-column-gap,
+      class: gap-x,
+      values: $spacers,
+    )
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "gap-y": (
+      responsive: true,
+      property: grid-row-gap,
+      class: gap-y,
+      values: $spacers,
+    )
+  )
+);

@@ -1,0 +1,63 @@
+header {
+  transform:translateZ(0);
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:200;
+}
+
+#app{
+  padding-top:56px;
+}
+
+.ts-line {
+  overflow: hidden;
+}
+
+.demo-element {
+  padding:250px 0;
+  &:nth-child(odd){
+    background-color:theme-color('primary');;
+    color:$white;
+  }
+  @include media-breakpoint-down(sm) {
+    padding:100px 0;
+    .display-3{
+      font-size:2.175rem;
+    }
+  }
+}
+
+.triangle-top {
+    @include css-triangle($primary, up, 2rem);
+}
+
+.triangle-left {
+  @include css-triangle($primary, left, 1rem);
+}
+
+.link-house {
+  @include fontawesome-before("e00d");
+  @include fontawesome-after("e00d", 1.5em, 900);
+}
+
+.link-fries {
+  @include fontawesome-before("f803");
+  @include fontawesome-after("f803");
+}
+
+.link-egg {
+  @include fontawesome-before("f7fc");
+  @include fontawesome-after("f7fc");
+}
+
+.link-bacon {
+  @include fontawesome-before("f7e5");
+  @include fontawesome-after("f7e5");
+}
+
+.link-burger {
+  @include fontawesome-before("f805");
+  @include fontawesome-after("f805");
+}

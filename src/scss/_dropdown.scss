@@ -1,0 +1,26 @@
+.dropdown-toggle {
+  @include caret;
+}
+
+.dropup .dropdown-toggle {
+  @include caret(up);
+}
+
+.dropright .dropdown-toggle {
+  @include caret(right);
+}
+
+.dropleft .dropdown-toggle {
+  @include caret(left);
+}
+
+.dropdown-fullwidth {
+  position:static;
+  .dropdown-menu {
+    width:100%;
+    margin:0;
+  }
+  .row {
+    width:100%;
+  }
+}
